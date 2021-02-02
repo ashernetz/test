@@ -1,0 +1,36 @@
+.filter {
+  display: none;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+
+  @include md() {
+    display: flex;
+  }
+
+
+  &__title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    line-height: 1.25;
+    color: $mine-shaft;
+  }
+
+  &__name {
+    color: $dove-gray;
+    font-weight: 400;
+    font-size: 0.9rem;
+    margin-left: 0;
+    white-space: nowrap;
+  }
+
+  &__results-qty {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: $dusty-gray;
+    margin-left: 6px;
+  }
+}

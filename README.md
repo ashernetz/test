@@ -1,10 +1,14 @@
-# Getting Started with Create React App
+# Mercado Libre FE Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was done by Jesus Ibanez
 
 ## Available Scripts
 
-In the project directory, you can run:
+this project was done using create react app so basically all the commands that are intented
+to work on create react app will be present
+
+### `npm i`
+will install all the dependencies that are needed in order to check the project.
 
 ### `yarn start`
 
@@ -29,42 +33,26 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## ITCSS
+For the styles the inverted triangle CSS architecture was used in order to define the components, the 
+utilities needed, configurations and more relying on specificity.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## BEM
+The CSS code was written used the BEM methodology in order to "encapsulate" the styles and get sure
+all the code was used properly on the right components.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Redux
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+For all the major actions such as getting the list of products or the details of a single product
+redux (madiator pattern) was used.
 
-## Learn More
+### Accessibility
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+A couple of accessibility features were implemented on the project such as "tabable" objects
+like the products on the product list and deliver the same interation.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Architecture
+Most of the architecture is a very common used for projects using react - redux. 
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

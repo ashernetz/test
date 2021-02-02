@@ -1,12 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import Main from './pages/containers/main';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/index.scss';
+import { BrowserRouter } from 'react-router-dom';
+import {createStore, applyMiddleware, compose} from 'redux';
+import {Provider} from 'react-redux';
+import reduxThunk from 'redux-thunk';
+import reducers from './reducers'
+
+const initialState = {
+  data: {}
+}
+
+
+const store =  createStore(
+    reducers,
+    initialState,
+    compose(
+        applyMiddleware(reduxThunk),
+        window.devToolsExtension ? window.devToolsExtension() : f => f
+    )
+);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <BrowserRouter >
+        <Main />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

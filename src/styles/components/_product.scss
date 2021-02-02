@@ -1,0 +1,44 @@
+.product {
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-family: $lato;
+  border-bottom: 1px solid $silver;
+  padding: 2rem;
+
+  &:focus {
+    outline: $dusty-gray;
+    outline-style: auto;
+  }
+
+  &__img {
+    flex: 1;
+
+    img {
+      max-width: 90px;
+      max-height: 90px;
+    }
+  }
+
+  &__description {
+    flex: 5
+  }
+
+  &__location {
+    flex: 1;
+    color: $dove-gray;
+  }
+
+  &__price {
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+
+  &__title {
+    font-size: 1.2rem;
+    color: $mine-shaft;
+    text-transform: capitalize;
+  }
+}

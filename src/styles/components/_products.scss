@@ -1,0 +1,21 @@
+.products {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  &__filters {
+    display: none;
+    width: 30%;
+    @include md() {
+      display: block;
+    }
+  }
+  &__container{
+    width: 100%;
+    background: $white;
+
+    @include md() {
+      width: 70%;
+    }
+  }
+}

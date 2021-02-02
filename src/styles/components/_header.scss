@@ -1,0 +1,82 @@
+.header {
+  position: relative;
+  background-color: $turbo;
+  font-family: $lato;
+  display: flex;
+  align-items: center;
+  padding-bottom: 25px;
+  @include md() {
+    height: 100px;
+    padding-bottom: 0;
+  }
+
+  &__container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    @include md() {
+      flex-direction: row;
+      max-width: 1440px;
+      justify-content: center;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    text-indent: -9999%;
+    background-position: 50% 50%;
+    cursor: pointer;
+    background-image: url('../../static/img/Logo_ML.png');
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 72px;
+
+    @include md() {
+      background-image: url('../../static/img/Logo_ML@2x.png.png');
+      background-size: 80%;
+
+
+    }
+  }
+
+  &__form {
+    width: 70%;
+
+    form {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__search {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    input[type='text'] {
+      font-family: inherit;
+      font-size: inherit;
+      color: inherit;
+      background-color: $white;
+      border: none;
+      padding: 0.7rem 2rem;
+      border-radius: 100px;
+      width: 90%;
+      transition: all 0.2s;
+      margin-right: -3.25rem;
+      transition: all 0.2s;
+
+      &::placeholder {
+        color: $silver;
+      }
+
+      &:focus {
+        outline: none;
+        width: 100%;
+        background: $concrete;
+      }
+    }
+  }
+}
