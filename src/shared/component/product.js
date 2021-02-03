@@ -10,6 +10,7 @@ function products({ info, onProductClick, keyDown }) {
       onClick={() => onProductClick(info.id)}
       tabIndex="0"
       onKeyDown={e => keyDown(e, info.id)}
+      aria-label={info.title}
     >
       <div className="product__img">
         <img src={info.thumbnail} alt={info.title} />

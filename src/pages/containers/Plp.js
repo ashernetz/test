@@ -14,8 +14,7 @@ class Plp extends Component {
   }
 
   componentDidMount() {
-    let { history } = this.props;
-    let { isLoading, query, products } = this.props;
+    let { history, isLoading, query, products } = this.props;
     if (query) {
       this.setState({
         query,
