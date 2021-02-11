@@ -7,6 +7,19 @@
   border-bottom: 1px solid $silver;
   padding: 2rem;
 
+  a {
+    border-bottom: 2px solid transparent;
+    transition: ease 0.5s;
+
+    &:hover,
+    &:focus {
+      color: $black;
+      outline: none;
+      text-decoration: none;
+      border-bottom: 1px solid $black;
+    }
+  }
+
   &:focus {
     outline: $dusty-gray;
     outline-style: auto;
