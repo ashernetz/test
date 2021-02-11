@@ -2,40 +2,31 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-
-import Main from './pages/containers/main';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/index.scss';
-import { BrowserRouter } from 'react-router-dom';
-import {createStore, applyMiddleware, compose} from 'redux';
-import {Provider} from 'react-redux';
-import reduxThunk from 'redux-thunk';
-import reducers from './reducers'
+import context from './context';
+import configureServices from './services';
+import configureModules from './modules';
+import configureStore from './store';
 
-const initialState = {
-  data: {}
-}
+const loadRoot = async () => {
+  const module = await import('./components/root');
+  return module.default;
+};
 
+const render = async store => {
+  const target = document.getElementById('root');
+  const Root = await loadRoot();
+  ReactDOM.render(<Root store={store} />, target);
+};
 
-const store =  createStore(
-    reducers,
-    initialState,
-    compose(
-        applyMiddleware(reduxThunk),
-        window.devToolsExtension ? window.devToolsExtension() : f => f
-    )
-);
-
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter >
-        <Main />
-      </BrowserRouter>
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+(async function init() {
+  const services = await configureServices();
+  const { actions, reducers } = await configureModules(services);
+  context.registerServices(services);
+  context.registerActions(actions);
+  render(configureStore(reducers));
+})();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
