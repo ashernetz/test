@@ -1,7 +1,8 @@
 import CheckPropTypes from 'check-prop-types';
 import { createStore, applyMiddleware, compose } from 'redux';
 import reduxThunk from 'redux-thunk';
-import rootReducer from '../reducers';
+import rootReducer from 'modules/products/reducers/products.reducer';
+import types from 'modules/products/actions/productsTypes';
 
 /**
  *
@@ -42,8 +43,9 @@ const initialState = {
  * @returns {Store} - Redux store.
  */
 export const storeFactory = initialState => {
+  const reducer = rootReducer(types);
   const store = createStore(
-    rootReducer,
+    reducer,
     initialState,
     compose(applyMiddleware(reduxThunk)),
   );
