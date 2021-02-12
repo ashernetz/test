@@ -6,7 +6,9 @@ const initActions = (types, { productsService }) => {
   const loadingProductsSuccess = actionCreator(types.LOADING_PRODUCTS_SUCCESS);
   const loadingProductsError = actionCreator(types.LOADING_PRODUCTS_ERROR);
   const updateSearchQueryAction = actionCreator(types.UPDATE_SEARCH_QUERY);
-  const loadingProductByIdSuccess =  actionCreator(types.LOADING_PRODUCTS_BY_ID_SUCCESS);
+  const loadingProductByIdSuccess = actionCreator(
+    types.LOADING_PRODUCTS_BY_ID_SUCCESS,
+  );
 
   const getProducts = query => async dispatch => {
     dispatch(loadingProducts());
@@ -34,16 +36,16 @@ const initActions = (types, { productsService }) => {
 
     try {
       await productsService.getProductById(id).then(response => {
-          const payload = {
-                name: response.data.title,
-                pictures: productsService.formatGalleryImages(response.data.pictures),
-                sold_quantity: response.data.sold_quantity,
-                condition: response.data.condition,
-                quantity: response.data.available_quantity,
-                price: response.data.price,
-              };
-          dispatch(loadingProductByIdSuccess(payload));
-        });
+        const payload = {
+          name: response.data.title,
+          pictures: productsService.formatGalleryImages(response.data.pictures),
+          sold_quantity: response.data.sold_quantity,
+          condition: response.data.condition,
+          quantity: response.data.available_quantity,
+          price: response.data.price,
+        };
+        dispatch(loadingProductByIdSuccess(payload));
+      });
     } catch (error) {
       Swal.fire({
         title: 'Error!',
@@ -57,7 +59,6 @@ const initActions = (types, { productsService }) => {
 
   const updateSearchQuery = query => dispatch => {
     dispatch(updateSearchQueryAction(query));
-    dispatch(getProducts(query));
   };
 
   return {

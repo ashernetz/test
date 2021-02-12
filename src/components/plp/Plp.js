@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ProductsList from '../productsList/productsList';
 import Loading from '../loading/Loading';
-import NoProducts from '../noProducts/NoProducts'
+import NoProducts from '../noProducts/NoProducts';
+import { actions } from '../../context/index';
 
 class Plp extends Component {
   constructor(props) {
@@ -14,12 +15,11 @@ class Plp extends Component {
   }
 
   componentDidMount() {
-    let { history, isLoading, query, products } = this.props;
-    if (query) {
+    let { history, getProducts, match } = this.props;
+    if (match.params.query) {
+      getProducts(match.params.query);
       this.setState({
-        query,
-        isLoading,
-        products: products,
+        query: match.params.query,
       });
     } else {
       history.push('/');
@@ -27,24 +27,21 @@ class Plp extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    let { query, isLoading, products } = this.props;
-    let stateQuery = this.state.query;
-    let stateLoading = this.state.isLoading;
-    if (
-      (query !== stateQuery && stateQuery !== '') ||
-      isLoading !== stateLoading
-    ) {
+    const { getProducts, match, isLoading } = this.props;
+    const { query } = this.state;
+    const paramsQuery = match.params.query;
+
+    if (paramsQuery !== query && !isLoading) {
+      getProducts(paramsQuery);
       this.setState({
-        query,
-        isLoading,
-        products,
+        query: paramsQuery,
       });
     }
   }
 
   renderProducts() {
-    let { products } = this.props;
-    if (products.length < 1)  {
+    let { products, isLoading } = this.props;
+    if (products.length < 1 && !isLoading) {
       return this.renderNoProducts();
     }
     return <ProductsList />;
@@ -59,13 +56,17 @@ class Plp extends Component {
   }
 
   renderNoProducts() {
-    let {query} =this.props;
-    return  <NoProducts query={query}/>
+    let { query } = this.props;
+    return <NoProducts query={query} />;
   }
 
   render() {
-    let { isLoading } = this.state;
-    return <React.Fragment>{isLoading ? this.renderLoading() : this.renderContent()}</React.Fragment>;
+    let { isLoading } = this.props;
+    return (
+      <React.Fragment>
+        {isLoading ? this.renderLoading() : this.renderContent()}
+      </React.Fragment>
+    );
   }
 }
 
@@ -79,7 +80,12 @@ function mapStateToProps(state) {
     filters,
   };
 }
+
+const mapActionstoProps = {
+  getProducts: actions.products.getProducts,
+};
+
 export default connect(
   mapStateToProps,
-  null,
+  mapActionstoProps,
 )(Plp);

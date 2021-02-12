@@ -13,8 +13,7 @@ function HeaderForm({ onUpdateQuery, history }) {
     if (query.length > 0) {
       onUpdateQuery(query);
       history.push({
-        pathname: '/plp',
-        query,
+        pathname: `/plp/${query}`
       });
     } else {
       Swal.fire({
