@@ -15,6 +15,7 @@ const initActions = (types, { productsService }) => {
     try {
       await productsService.getProducts(query).then(response => {
         const payload = {
+          breadCrums: productsService.breadCrumsFilters(response.data.filters),
           products: response.data.results,
           filters: response.data.available_filters,
         };
