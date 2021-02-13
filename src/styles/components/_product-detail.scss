@@ -22,6 +22,19 @@
       width: 70%;
       margin-bottom: 0;
     }
+    img {
+      max-width: 200px;
+      max-height: 386px;
+
+      @include sm(){
+        max-width: 300px;
+      }
+
+      @include md() {
+        max-width: 500px;
+      }
+    }
+
   }
 
   &__info {

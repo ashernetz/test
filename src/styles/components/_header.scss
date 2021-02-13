@@ -41,11 +41,16 @@
   }
 
   &__form {
-    width: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    @include md() {
+      width: 70%;
+    }
 
     form {
-      display: flex;
-      justify-content: center;
+      width: 80%;
     }
   }
 
@@ -67,6 +72,8 @@
       transition: all 0.2s;
       margin-right: -3.25rem;
       transition: all 0.2s;
+
+
 
       &::placeholder {
         color: $silver;

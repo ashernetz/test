@@ -23,6 +23,7 @@ const initReducer = types => {
           ...state,
           products: payload.products,
           filters: payload.filters,
+          breadCrums: payload.breadCrums,
           isLoading: false,
         };
 
