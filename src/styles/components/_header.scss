@@ -35,8 +35,6 @@
     @include md() {
       background-image: url('../../static/img/Logo_ML@2x.png.png');
       background-size: 80%;
-
-
     }
   }
 
@@ -51,6 +49,22 @@
 
     form {
       width: 80%;
+      display: flex;
+      justify-content: center;
+    }
+
+    button {
+      margin-left: -1.7rem;
+      padding: 0.5rem;
+      background: $gallery;
+      color: $mine-shaft;
+
+      @include sm() {
+        margin-left: 0;
+        background: transparent;
+        color: black;
+        border: none;
+      }
     }
   }
 
@@ -67,13 +81,16 @@
       background-color: $white;
       border: none;
       padding: 0.7rem 2rem;
-      border-radius: 100px;
-      width: 90%;
+      border-radius: 0;
+      width: 98%;
       transition: all 0.2s;
-      margin-right: -3.25rem;
-      transition: all 0.2s;
+      box-shadow: 3px 3px 11px -4px rgba(0, 0, 0, 0.65);
 
-
+      @include sm() {
+        width: 90%;
+        border-radius: 100px;
+        margin-right: -3.25rem;
+      }
 
       &::placeholder {
         color: $silver;
