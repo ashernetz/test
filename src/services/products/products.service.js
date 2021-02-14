@@ -1,9 +1,9 @@
 import types from '../../modules/products/actions/productsTypes';
 
 const ProductsService = httpclient => {
-  const getProducts = query => {
+  const getProducts = (query, maxProducts) => {
     const url = decodeURI(
-      `${types.MELI_URL}${types.MELI_PRODUCTS_SEARCH}${query}&limit=4`,
+      `${types.MELI_URL}${types.MELI_PRODUCTS_SEARCH}${query}&limit=${maxProducts}`,
     );
     return httpclient.get(url);
   };

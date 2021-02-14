@@ -10,6 +10,7 @@ const types = {
   MELI_URL: 'https://api.mercadolibre.com/',
   MELI_PRODUCTS_SEARCH: 'sites/MLA/search?q=',
   MELI_SINGLE_SEARCH: 'items/',
+  MAX_PRODUCTS_SEARCH: 4,
 };
 
 export default types;
