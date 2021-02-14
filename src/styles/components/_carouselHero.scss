@@ -1,0 +1,52 @@
+.carouselHero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: $white;
+  border: 1px solid $gallery;
+  padding: 1rem;
+  cursor: pointer;
+  transition: ease 0.4s;
+  outline-style: auto;
+  outline: $gallery;
+  backface-visibility: hidden;
+  justify-content: flex-end;
+  height: 280px;
+  overflow: hidden;
+
+  &:hover,
+  &:focus {
+    box-shadow: 3px 3px 11px -4px rgba(0, 0, 0, 0.65);
+    height: 300px;
+  }
+
+  &:not(:last-child) {
+    @include sm() {
+      margin-right: 1rem;
+    }
+  }
+
+  &:hover .carouselHero__info,
+  &:focus .carouselHero__info {
+    height: auto;
+  }
+
+  img {
+    width: 80%;
+    margin: auto;
+    max-width: 300px;
+  }
+
+  &__info {
+    @include md() {
+      height: 0;
+    }
+  }
+
+  &__title {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: $dove-gray;
+    text-transform: capitalize;
+  }
+}
