@@ -8,8 +8,10 @@
     display: flex;
     list-style: none;
     flex-wrap: wrap;
+    padding-left: 2rem;
 
     @include md() {
+      padding: 0;
     }
   }
 
