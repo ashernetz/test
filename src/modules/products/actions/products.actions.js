@@ -10,10 +10,10 @@ const initActions = (types, { productsService }) => {
     types.LOADING_PRODUCTS_BY_ID_SUCCESS,
   );
 
-  const getProducts = query => async dispatch => {
+  const getProducts = (query, maxItems = types.MAX_PRODUCTS_SEARCH ) => async dispatch => {
     dispatch(loadingProducts());
     try {
-      await productsService.getProducts(query).then(response => {
+      await productsService.getProducts(query, maxItems).then(response => {
         const payload = {
           breadCrums: productsService.breadCrumsFilters(response.data.filters),
           products: response.data.results,

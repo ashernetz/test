@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { withRouter } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import types from '../../modules/products/actions/productsTypes'
 
 function HeaderForm({ onUpdateQuery, history }) {
   const [query, setQuery] = useState('');
@@ -13,7 +14,7 @@ function HeaderForm({ onUpdateQuery, history }) {
     if (query.length > 0) {
       onUpdateQuery(query);
       history.push({
-        pathname: `/plp/${query}`
+        pathname: `/plp/${query}/${types.MAX_PRODUCTS_SEARCH}`
       });
     } else {
       Swal.fire({

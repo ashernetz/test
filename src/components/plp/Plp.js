@@ -4,6 +4,7 @@ import ProductsList from '../productsList/productsList';
 import Loading from '../loading/Loading';
 import NoProducts from '../noProducts/NoProducts';
 import { actions } from '../../context/index';
+import types from '../../modules/products/actions/productsTypes';
 
 class Plp extends Component {
   constructor(props) {
@@ -16,8 +17,12 @@ class Plp extends Component {
 
   componentDidMount() {
     let { history, getProducts, match } = this.props;
+    const maxProducts = match.params.limit
+      ? match.params.limit
+      : types.MAX_PRODUCTS_SEARCH;
+
     if (match.params.query) {
-      getProducts(match.params.query);
+      getProducts(match.params.query, maxProducts);
       this.setState({
         query: match.params.query,
       });
