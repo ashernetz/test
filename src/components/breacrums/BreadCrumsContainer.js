@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import BreadCrumComponent from './BreadCrumComponent';
-import { actions } from '../../context';
 
 class BreadCrums extends Component {
   constructor(props) {

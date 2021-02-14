@@ -1,0 +1,22 @@
+.carousel {
+
+  &__title {
+    font-size: 26px;
+    font-weight: 300;
+    margin: 0 0 0 8px;
+    color: $dove-gray;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.5rem;
+
+    @include sm() {
+      flex-direction: row;
+      paddin: 0;
+    }
+  }
+}

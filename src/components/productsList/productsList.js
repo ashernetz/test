@@ -3,6 +3,8 @@ import Product from '../product/product';
 import FiltersList from '../filterList/FiltersList';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { Row } from 'react-bootstrap';
+import BreadCrums from '../breacrums/BreadCrumsContainer'
 
 class productsList extends Component {
   constructor(props) {
@@ -46,12 +48,18 @@ class productsList extends Component {
 
   render() {
     return (
-      <div className="plp">
-        <div className="products">
-          <div className="products__filters">{this.renderFilters()}</div>
-          <div className="products__container">{this.renderProducts()}</div>
-        </div>
-      </div>
+        <React.Fragment>
+          <Row>
+            <BreadCrums />
+          </Row>
+          <div className="plp">
+            <div className="products">
+              <div className="products__filters">{this.renderFilters()}</div>
+              <div className="products__container">{this.renderProducts()}</div>
+            </div>
+          </div>
+        </React.Fragment>
+
     );
   }
 }
