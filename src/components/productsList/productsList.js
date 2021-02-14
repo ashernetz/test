@@ -4,7 +4,7 @@ import FiltersList from '../filterList/FiltersList';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Row } from 'react-bootstrap';
-import BreadCrums from '../breacrums/BreadCrumsContainer'
+import BreadCrums from '../breacrums/BreadCrumsContainer';
 
 class productsList extends Component {
   constructor(props) {
@@ -48,18 +48,16 @@ class productsList extends Component {
 
   render() {
     return (
-        <React.Fragment>
-          <Row>
-            <BreadCrums />
-          </Row>
-          <div className="plp">
-            <div className="products">
-              <div className="products__filters">{this.renderFilters()}</div>
-              <div className="products__container">{this.renderProducts()}</div>
-            </div>
-          </div>
-        </React.Fragment>
+      <React.Fragment>
+        <BreadCrums />
 
+        <div className="plp">
+          <div className="products">
+            <div className="products__filters">{this.renderFilters()}</div>
+            <div className="products__container">{this.renderProducts()}</div>
+          </div>
+        </div>
+      </React.Fragment>
     );
   }
 }
@@ -79,6 +77,6 @@ export default withRouter(
   connect(
     mapStateToProps,
     //{ productById },
-      null
+    null,
   )(productsList),
 );
