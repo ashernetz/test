@@ -34,6 +34,10 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 
+## Live Site
+the test was deployed to Heroku in order to show it live and working: [Live Site](https://jibanez-melitest.herokuapp.com/)
+
+
 ## ITCSS
 For the styles the inverted triangle CSS architecture was used in order to define the components, the 
 utilities needed, configurations and more relying on specificity.
