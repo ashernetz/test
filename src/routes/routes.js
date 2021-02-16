@@ -1,16 +1,18 @@
 import React from 'react';
-import {  Route, Switch, Redirect } from 'react-router-dom';
-import Home from "../components/home/HomeContainer";
-import Plp from "../components/plp/Plp";
-import ProductDescriptionPage from "../components/pdp/Pdp";
+import { Route, Switch, Redirect } from 'react-router-dom';
+import Home from '../components/home/HomeContainer';
+import Plp from '../components/plp/Plp';
+import ProductDescriptionPage from '../components/pdp/Pdp';
 
-const createRoutes = () => (
+const createRoutes = () => {
+  return (
     <Switch>
-      <Route path='/' component={Home} exact />
-      <Route path='/plp/:query/:limit?' component={Plp} exact />
-      <Route path='/pdp/:id' component={ProductDescriptionPage} />
-      <Redirect to='/' />
+      <Route path="/" component={Home} exact />
+      <Route path="/plp/:query/:limit?" component={Plp} exact />
+      <Route path="/pdp/:id" component={ProductDescriptionPage} />
+      <Redirect to="/" />
     </Switch>
-);
+  );
+};
 
 export default createRoutes;

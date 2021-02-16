@@ -36,14 +36,14 @@ function CarouselElement(props) {
 
 CarouselElement.propTypes = {
   thumbnail: PropTypes.string,
-  price: PropTypes.string,
+  price: PropTypes.number,
   title: PropTypes.string,
   onProductClick: PropTypes.func.isRequired,
   keyDown: PropTypes.func.isRequired,
 };
 CarouselElement.defaultProps = {
   thumbnail: '',
-  price: '',
+  price: 0,
   title: '',
 };
 
