@@ -11,7 +11,7 @@ function CarouselElement(props) {
       onClick={() => {
         props.onProductClick(props.id);
       }}
-      onKeyDown={(e) => {
+      onKeyDown={e => {
         props.keyDown(e, props.id);
       }}
     >
@@ -35,7 +35,17 @@ function CarouselElement(props) {
   );
 }
 
-CarouselElement.propTypes = {};
-CarouselElement.defaultProps = {};
+CarouselElement.propTypes = {
+  thumbnail: PropTypes.string,
+  price: PropTypes.string,
+  title: PropTypes.string,
+  onProductClick: PropTypes.func.isRequired,
+  keyDown: PropTypes.func.isRequired,
+};
+CarouselElement.defaultProps = {
+  thumbnail: '',
+  price: '',
+  title: '',
+};
 
 export default CarouselElement;
