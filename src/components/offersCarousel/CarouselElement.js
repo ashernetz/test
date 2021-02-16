@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import NumberFormat from 'react-number-format';
 
 function CarouselElement(props) {
-  console.log(props);
   return (
     <div
       className="carouselHero"
@@ -37,14 +36,14 @@ function CarouselElement(props) {
 
 CarouselElement.propTypes = {
   thumbnail: PropTypes.string,
-  price: PropTypes.string,
+  price: PropTypes.number,
   title: PropTypes.string,
   onProductClick: PropTypes.func.isRequired,
   keyDown: PropTypes.func.isRequired,
 };
 CarouselElement.defaultProps = {
   thumbnail: '',
-  price: '',
+  price: 0,
   title: '',
 };
 
