@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import NumberFormat from 'react-number-format';
 
 function CarouselElement(props) {
-  console.log(props);
   return (
     <div
       className="carouselHero"
