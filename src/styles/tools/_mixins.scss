@@ -2,12 +2,6 @@
 /* Tools - Mixins */
 /* ============================================================================================================ */
 
-@mixin font-size($size) {
-  $font-size: $size;
-  $font-size: calculate-rem($size);
-}
-
-
 @mixin xs() {
   @media (min-width: 320px) {
     @content;
