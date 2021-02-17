@@ -1,9 +1,9 @@
 import React from 'react';
-import HeaderForm from './HeaderFormComponent';
+import HeaderForm from '../components/headerForm/HeaderFormComponent';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { checkProps, findByTestAttr } from 'testing/testUtils';
-import NoProducts from '../noProducts/NoProducts';
+import NoProducts from '../components/noProducts/NoProducts';
 
 Enzyme.configure({ adapter: new Adapter() });
 

@@ -1,9 +1,9 @@
 import React from 'react';
-import ProductDetail from './pdpComponent';
+import ProductDetail from '../components/pdp/pdpComponent';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import checkPropTypes from 'check-prop-types';
-import { checkProps, findByTestAttr } from '../../testing/testUtils';
+import { checkProps, findByTestAttr } from './testUtils';
 
 Enzyme.configure({ adapter: new Adapter() });
 

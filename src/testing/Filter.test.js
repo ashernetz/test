@@ -1,8 +1,8 @@
 import React from 'react';
-import Filter from './Filter';
+import Filter from '../components/filter/Filter';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-import {checkProps, findByTestAttr} from '../../testing/testUtils';
+import {checkProps, findByTestAttr} from './testUtils';
 
 
 Enzyme.configure({ adapter: new Adapter() });
