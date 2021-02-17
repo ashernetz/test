@@ -64,6 +64,10 @@ const services = {
 
       return images;
     },
+
+    breadCrumsFilters: filters => {
+      return [];
+    },
   },
 };
 

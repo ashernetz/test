@@ -7,8 +7,7 @@ import Loading from '../loading/Loading';
 class HomeContainer extends Component {
   componentDidMount() {
     const { getProducts } = this.props;
-    console.log(this.props);
-    getProducts('iphone');
+    getProducts('samsung');
   }
 
   renderPromotions() {

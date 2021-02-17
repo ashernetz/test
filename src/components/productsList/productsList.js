@@ -3,7 +3,6 @@ import Product from '../product/product';
 import FiltersList from '../filterList/FiltersList';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { Row } from 'react-bootstrap';
 import BreadCrums from '../breacrums/BreadCrumsContainer';
 
 class productsList extends Component {

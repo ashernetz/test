@@ -1,4 +1,4 @@
-import productsReducer from '../products.reducer';
+import productsReducer from '../modules/products/reducers/products.reducer';
 import types from 'modules/products/actions/productsTypes';
 
 const action = { type: 'something', payload: '' };

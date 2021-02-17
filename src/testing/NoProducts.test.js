@@ -1,5 +1,5 @@
 import React from 'react';
-import NoProducts from './NoProducts';
+import NoProducts from '../components/noProducts/NoProducts';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import {checkProps, findByTestAttr} from 'testing/testUtils';
